@@ -55,7 +55,7 @@ module Mail
         str = Ruby19.decode_base64(match[2])
         str.force_encoding(fix_encoding(encoding))
       end
-      decoded = str.encode("utf-8", :invalid => :replace, :replace => "")
+      decoded = str.encode("utf-8", :undef => :replace, :invalid => :replace, :replace => "")
       decoded.valid_encoding? ? decoded : decoded.encode("utf-16le", :invalid => :replace, :replace => "").encode("utf-8")
     end
 
@@ -71,7 +71,7 @@ module Mail
         str = Encodings::QuotedPrintable.decode(match[2].gsub(/_/, '=20'))
         str.force_encoding(fix_encoding(encoding))
       end
-      decoded = str.encode("utf-8", :invalid => :replace, :replace => "")
+      decoded = str.encode("utf-8", :undef => :replace, :invalid => :replace, :replace => "")
       decoded.valid_encoding? ? decoded : decoded.encode("utf-16le", :invalid => :replace, :replace => "").encode("utf-8")
     end
 
