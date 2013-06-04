@@ -5,7 +5,7 @@ require 'mail/version'
 Gem::Specification.new do |s|
   s.name        = "mail"
   s.version     = Mail::VERSION::STRING
-  s.authors     = ["Aafaq Hassan"]
+  s.author      = "Aafaq Hassan"
   s.email       = "aafaqhassan@gmail.com"
   s.homepage    = "http://github.com/aafaq-hassan/mail"
   s.description = "A really Ruby Mail handler."
@@ -22,5 +22,5 @@ Gem::Specification.new do |s|
   s.add_dependency('tlsmail', '~> 0.0.1') if RUBY_VERSION == '1.8.6'
 
   s.require_path = 'lib'
-  s.files = %w(README.md CONTRIBUTING.md CHANGELOG.rdoc Dependencies.txt Gemfile Gemfile.lock Rakefile TODO.rdoc) + Dir.glob("lib/**/*")
+  s.files = %w(README.md CONTRIBUTING.md CHANGELOG.rdoc Dependencies.txt Gemfile Rakefile TODO.rdoc) + Dir.glob("lib/**/*")
 end
